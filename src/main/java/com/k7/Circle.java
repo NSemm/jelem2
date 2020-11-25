@@ -10,6 +10,6 @@ public class Circle {
 
 
     public boolean pointInCircle(Point p) {
-        return (center.distanceTo(p) <= Math.pow(radius, 2));
+        return (center.distanceTo(p) <= radius);
     }
 }
