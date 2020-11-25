@@ -9,9 +9,9 @@ public class Main {
         System.out.println("Enter quantity of points");
         int quant = sc.nextInt();
         for (int i = 1; i <= quant; i++) {
-            System.out.println("Enter X of point "+i);
+            System.out.println("Enter X of point " + i);
             int x = sc.nextInt();
-            System.out.println("Enter Y of point "+i);
+            System.out.println("Enter Y of point " + i);
             int y = sc.nextInt();
             Point point = new Point(x, y);
             pointStorage.addPoint(point);
@@ -22,16 +22,13 @@ public class Main {
         int centerY = sc.nextInt();
         System.out.println("Enter radius of circle");
         int radius = sc.nextInt();
-        Circle circle = new Circle(centerX, centerY, radius, pointStorage);
-        circle.pointsInCircle();
+        Point center = new Point(centerX, centerY);
+        Circle circle = new Circle(center, radius);
+        for (int i = 0; i < pointStorage.getAllPoint().length; i++) {
+            if (circle.pointInCircle(pointStorage.getAllPoint()[i]))
+                System.out.println("Point " + (i + 1) + " belongs this circle");
 
-
-
-
-
-
-
-
+        }
 
 
 
