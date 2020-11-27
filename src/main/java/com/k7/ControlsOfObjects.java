@@ -21,7 +21,7 @@ public class ControlsOfObjects {
             System.out.println("Enter Y of point " + i);
             int y = sc.nextInt();
             Point point = new Point(x, y);
-            pointStorage.addPoint(point);
+            pointStorage.addPointOptimized(point);
         }
     }
 
@@ -35,8 +35,8 @@ public class ControlsOfObjects {
         Point center = new Point(centerX, centerY);
         Circle circle = new Circle(center, radius);
         for (
-                int i = 0; i < pointStorage.getAllPoint().length; i++) {
-            if (circle.pointInCircle(pointStorage.getAllPoint()[i]))
+                int i = 0; i < pointStorage.size(); i++) {
+            if (circle.pointInCircle(pointStorage.getAll()[i]))
                 System.out.println("Point " + (i + 1) + " belongs this circle");
 
         }

@@ -6,8 +6,13 @@ public class PointStorage {
     private Point[] points = new Point[4];
     private int indexArray = 0;
 
-    public Point[] getAllPoint() {
+    public Point[] getAll() {
         return points;
+    }
+    public void getAllPoint(){
+        for (int i = 0; i < indexArray; i++) {
+            System.out.println(getPoint(i));
+        }
     }
 
     public Point getPoint(int i) {
@@ -38,7 +43,7 @@ public class PointStorage {
 
     public void removePoint(int i) {
         checkIndex(i);
-        Point[] temp = new Point[points.length];
+        Point[] temp = new Point[(points.length - indexArray) > 4 ? indexArray : points.length];
         for (int j = 0; j < indexArray - 1; j++) {
             temp[j] = points[j < i ? j : j + 1];
         }
@@ -46,7 +51,7 @@ public class PointStorage {
         indexArray--;
     }
 
-    public void checkIndex(int i) {
+    private void checkIndex(int i) {
         if (i >= indexArray || i < 0)
             throw new IndexOutOfBoundsException();
     }
