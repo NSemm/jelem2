@@ -25,11 +25,6 @@ public class PointStorage {
         this.points[i] = p;
     }
 
-    public void addPoint(Point point) {
-        points = Arrays.copyOf(points, points.length + 1);
-        points[points.length - 1] = point;
-    }
-
     public void addPointOptimized(Point point) {
         if (indexArray == points.length - 1) pointArrayResize();
         points[indexArray] = point;
